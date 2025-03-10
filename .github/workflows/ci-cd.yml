@@ -21,11 +21,12 @@ jobs:
         with:
           node-version: '16'
 
-      #- name: Install dependencies
-       # run: npm install
+      - name: Install dependencies
+        run: npm install
 
-      - name: Run tests
-        run: npm test
+      # Comment out or remove the following section if you don't have tests
+      # - name: Run tests
+      #   run: npm test
 
   deploy:
     needs: build
@@ -52,4 +53,3 @@ jobs:
           eb init -p node.js your-app-name
           eb create
           eb deploy
-
